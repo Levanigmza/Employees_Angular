@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff) format('woff');
+}
+
+
+
+.add-employee{
+    min-width: 900px;
+    min-height: 550px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 0.1px solid #c0bfbf;
+    border-radius: 10px;
+    font-family: 'FiraGO';
+
+}
+
+
+.close img {
+    cursor: pointer;
+    width: 35px;
+}
+
+.close img:hover {
+    cursor: pointer;
+    width: 40px;
+}
+
+.header{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header h3{
+    font-family: 'FiraGO';
+}
+
+.add-employee form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+
+.add-employee form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #383E59;
+}
+
+.add-employee form input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'FiraGO', sans-serif;
+    font-size: 14px;
+}
+
+.add-employee form button {
+    width: 98%;
+    padding: 10px;
+    background-color: #383E59;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: 'FiraGO', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-employee form button:hover {
+    background-color: #2a2f45;
+}
+
+.add-employee form .form-group {
+    margin-bottom: 15px;
+}
+
+
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.disbled-button {
+    cursor: not-allowed;
+  }
+
+  .succes-alert{
+    font-family: 'FiraGO', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    padding: 100px;
+    gap:20px
+  }

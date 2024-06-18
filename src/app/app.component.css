@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff) format('woff');
+}
+
+
+header {
+    background: #383E59;
+    height: 100px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: 0;
+}
+
+header h1 {
+    padding: 4vh;
+    margin: 0;
+    color: #FFFFFF;
+    font-family: 'FiraGO';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.add-employee {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: unset;
+
+
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.add-employee button {
+    padding: 1px 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #383E59;
+    border-radius: 35px;
+    color: #383E59;
+    font-family: 'FiraGO', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0em;
+}
+
+.add-employee button:hover {
+    background-color: #383E59;
+    color: #FFFFFF;
+
+}
+
+
+
+
+.message-container {
+    margin-top: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.message-container h3 {
+    font-family: 'FiraGO';
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #FFADAD;
+}
+
+.message-container p {
+    font-family: 'FiraGO';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #383E59;
+
+}
+
+.employess-grid {
+    margin-top: 50px;
+}
+
+
+.correction-button {
+    border: none;
+    background: none;
+
+    cursor: pointer;
+    ;
+}
+
+.grid_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4vh;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+::ng-deep .p-button {
+    font-family: 'FiraGO';
+
+    cursor: pointer;
+    background: #FFADAD;
+    border: none;
+}
+
+::ng-deep .custom-edit-button :hover, ::ng-deep .p-button:hover .p-button-icon {
+    color: #0b0d16;
+    font-weight: 600;
+}
+
+.custom-edit-button i {
+    margin-right: 8px;
+    color: #0b0d16;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+.custom-edit-button i:hover {
+    color: #475fca;
+}
+
+::ng-deep .p-datatable thead th {
+    font-family: 'FiraGO';
+    background-color: #383e59e3;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 0.5px solid #FFFFFF
+}
+
+::ng-deep .p-datatable tbody td {
+    font-family: 'FiraGO';
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+::ng-deep .p-datatable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+::ng-deep .p-datatable tbody tr:hover {
+    background-color: #f3f1f1;
+    cursor: pointer;
+}
+
+::ng-deep .p-datatable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+::ng-deep .p-datatable tbody td,
+::ng-deep .p-datatable thead th {
+    padding: 12px 15px;
+}
+
+::ng-deep .p-datatable {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+::ng-deep .p-datatable table {
+    border: 1px solid #ddd;
+}
+
+
+.add-popup,
+.edit-popup,
+.delete-popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px)
+}
+
+.delete-employee {
+    border-radius: 10px;
+    font-family: 'FiraGO';
+    position: fixed;
+    left: 35%;
+    top: 30%;
+    margin: 0 auto;
+    width: 30%;
+    height: 20%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #0b0d162f
+
+}
+
+.close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.delete-employee .header {
+    text-align: center;
+}
+.employeename{
+    margin-top: 10px;
+}
+
+
+.popup-buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}
+
+::ng-deep .popup-buttons :hover {
+    color: #0b0d16;
+    font-weight: 600;
+}
+
+.message{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:10px
+}

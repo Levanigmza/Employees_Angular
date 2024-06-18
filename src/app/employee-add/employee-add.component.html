@@ -1,0 +1,87 @@
+<div class="add-employee">
+    <div class="header">
+        <h3>ახალი თანამშრომლის დამატება</h3>
+        <div class="close" (click)="closepopup()">
+            <i class="pi pi-times" style="font-size: 1.5rem; cursor: pointer;"></i>
+        </div>
+    </div>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" *ngIf="addEmployee">
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <label for="firstname">სახელი</label>
+        <input id="firstname" formControlName="firstname" type="text" (change)="alert()">
+        <div *ngIf="employeeForm.get('firstname')?.invalid && (employeeForm.get('firstname')?.dirty || employeeForm.get('firstname')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('firstname')?.errors?.['required']">სახელის შეყვანა აუცილებელია.</span>
+            <span *ngIf="employeeForm.get('firstname')?.errors?.['minlength']">სახელი უნდა აღემატებოდეს 2
+                სიმბოლოს.</span>
+            <span *ngIf="employeeForm.get('firstname')?.errors?.['maxlength']">სახელი არ უნდ აღემატებდეს 20
+                სიმბოლოს.</span>
+        </div>
+
+        <label for="lastname">გვარი</label>
+        <input id="lastname" formControlName="lastname" type="text" (change)="alert()">
+        <div *ngIf="employeeForm.get('lastname')?.invalid && (employeeForm.get('lastname')?.dirty || employeeForm.get('lastname')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('lastname')?.errors?.['required']">გვარის შეყვანა აუცილებელია.</span>
+            <span *ngIf="employeeForm.get('lastname')?.errors?.['minlength']">გვარი უნდა აღემატებოდეს 2 სიმბოლოს.</span>
+            <span *ngIf="employeeForm.get('lastname')?.errors?.['maxlength']">გვარი არ უნდა აღემატებოდეს 30
+                სიმბოლოს.</span>
+        </div>
+        <label for="person_ID">პირადი ნომერი</label>
+        <input id="person_ID" formControlName="person_ID" type="text" (change)="alert()">
+        <div *ngIf="employeeForm.get('person_ID')?.invalid && (employeeForm.get('person_ID')?.dirty || employeeForm.get('person_ID')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('person_ID')?.errors?.['required']">პირადი ნომერი აუცილებელია.</span>
+            <span *ngIf="employeeForm.get('person_ID')?.errors?.['minlength']">პირადი ნომერი უნდა იყოს 11 -
+                ნიშნა.</span>
+            <span *ngIf="employeeForm.get('person_ID')?.errors?.['maxlength']">პირადი ნომერი უნდა იყოს 11 -
+                ნიშნა.</span>
+            <span *ngIf="employeeForm.get('person_ID')?.errors?.['pattern']">პირადი ნომერი უნდა იყოს რიცხვითი</span>
+
+        </div>
+
+        <label for="age">ასაკი</label>
+        <input id="age" formControlName="age" type="number" min="18 " (change)="alert()">
+        <div *ngIf="employeeForm.get('age')?.invalid && (employeeForm.get('age')?.dirty || employeeForm.get('age')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('age')?.errors?.['required']">ასაკი შეყვანა აუცილებელია.</span>
+            <span *ngIf="employeeForm.get('age')?.errors?.['min']">ასაკი უნდა აღემატებოდეს 18-ს.</span>
+            <span *ngIf="employeeForm.get('age')?.errors?.['max']">ასაკი არ უნდა აღემატებოდეს 90-ს.</span>
+        </div>
+
+        <label for="proffesion">პროფესია</label>
+        <input id="proffesion" formControlName="proffesion" type="text" (change)="alert()">
+        <div *ngIf="employeeForm.get('proffesion')?.invalid && (employeeForm.get('proffesion')?.dirty || employeeForm.get('proffesion')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('proffesion')?.errors?.['required']">პროფესია შეყვანა აუცილებელია.</span>
+            <span *ngIf="employeeForm.get('proffesion')?.errors?.['minlength']">პროფესია უნდა აღემატებოდეს 5
+                სიმბოლოს.</span>
+            <span *ngIf="employeeForm.get('proffesion')?.errors?.['maxlength']">პროფესია არ უნდა აღემატებოდეს 50
+                სიმბოლოს.</span>
+        </div>
+
+        <label for="phoneNumber">მობილურის ნომერი</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" (change)="alert()">
+        <div *ngIf="employeeForm.get('phoneNumber')?.invalid && (employeeForm.get('phoneNumber')?.dirty || employeeForm.get('phoneNumber')?.touched)"
+            class="error-message">
+            <span *ngIf="employeeForm.get('phoneNumber')?.errors?.['required']">მობილურის ნომერი აუცილებელია (ფორმატი:
+                555XXXXXX).</span>
+            <span *ngIf="employeeForm.get('phoneNumber')?.errors?.['minlength']">მობილურის ნომერი უნდა იყოს 9 - ნიშნა
+                (ფორმატი: 555XXXXXX).</span>
+            <span *ngIf="employeeForm.get('phoneNumber')?.errors?.['maxlength']">მობილურის ნომერი უნდა იყოს 9 - ნიშნა
+                (ფორმატი: 555XXXXXX).</span>
+            <span *ngIf="employeeForm.get('phoneNumber')?.errors?.['pattern']">მობილურის ნომერი უნდა იყოს
+                რიცხვითი</span>
+        </div>
+
+        <button type="submit"
+        [ngClass]="{'disabled-button': employeeForm.invalid}">თანამშრომლის დამატება</button>
+
+    </form>
+
+    <div class="succes-alert" *ngIf="showSuccess">
+        <p>თანამშრომელი წარმატებით დაემატა</p>
+        <i class="pi pi-check" style="font-size: 1.5rem;"></i>
+
+    </div>
+</div>
